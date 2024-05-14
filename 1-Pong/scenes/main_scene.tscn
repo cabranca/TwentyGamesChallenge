@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt1wt54eyx2ly"]
+
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_6fy01"]
+[ext_resource type="PackedScene" uid="uid://crjrjvadrses1" path="res://scenes/ball.tscn" id="1_k13ln"]
+[ext_resource type="PackedScene" uid="uid://7nxkou8gn6wn" path="res://scenes/player.tscn" id="2_be3xs"]
+[ext_resource type="PackedScene" uid="uid://b6drb2u4dwbqe" path="res://scenes/player_2.tscn" id="3_o7kjh"]
+[ext_resource type="PackedScene" uid="uid://daj6mewetfjar" path="res://scenes/cpu.tscn" id="5_kh5es"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnok"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eklq"]
+size = Vector2(24, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3egk"]
+size = Vector2(24, 680)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqsyf"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_uh7ue"]
+font_size = 30
+
+[node name="Main Scene" type="Node2D"]
+script = ExtResource("1_6fy01")
+ball_scene = ExtResource("1_k13ln")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Top Wall" type="Area2D" parent="Boundaries" groups=["Top Wall", "Wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top Wall"]
+position = Vector2(576, -8)
+shape = SubResource("RectangleShape2D_fwnok")
+
+[node name="Bottom Wall" type="Area2D" parent="Boundaries" groups=["Bottom Wall", "Wall"]]
+position = Vector2(8, 664)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Bottom Wall"]
+position = Vector2(568, -8)
+shape = SubResource("RectangleShape2D_fwnok")
+
+[node name="Left Wall" type="Area2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left Wall"]
+position = Vector2(-12, 324)
+shape = SubResource("RectangleShape2D_4eklq")
+
+[node name="Right Wall" type="Area2D" parent="Boundaries"]
+position = Vector2(1168, 304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right Wall"]
+position = Vector2(-4, 20)
+shape = SubResource("RectangleShape2D_m3egk")
+
+[node name="Ball" parent="." instance=ExtResource("1_k13ln")]
+position = Vector2(578, 320)
+scale = Vector2(0.3, 0.3)
+
+[node name="Player" parent="." instance=ExtResource("2_be3xs")]
+position = Vector2(72, 320)
+scale = Vector2(0.25, 0.5)
+
+[node name="Player2" parent="." instance=ExtResource("3_o7kjh")]
+visible = false
+position = Vector2(1080, 320)
+scale = Vector2(0.25, 0.5)
+
+[node name="cpu" parent="." instance=ExtResource("5_kh5es")]
+position = Vector2(1080, 320)
+scale = Vector2(0.25, 0.5)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left Score" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 80.0
+offset_right = 344.0
+offset_bottom = 128.0
+text = "0"
+label_settings = SubResource("LabelSettings_xqsyf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right Score" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 80.0
+offset_right = 856.0
+offset_bottom = 128.0
+text = "0"
+label_settings = SubResource("LabelSettings_uh7ue")
+horizontal_alignment = 1
+vertical_alignment = 1
