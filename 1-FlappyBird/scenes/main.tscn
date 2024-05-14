@@ -1,0 +1,156 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdm5jj77r2uyp"]
+
+[ext_resource type="PackedScene" uid="uid://cfasfcou2gexq" path="res://scenes/mc.tscn" id="1_3ms1k"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_f85ub"]
+[ext_resource type="PackedScene" uid="uid://c84wl2c7us1tm" path="res://scenes/obstacle.tscn" id="3_x53jq"]
+[ext_resource type="Texture2D" uid="uid://cp4y6eisddv8" path="res://assets/background/skill-desc_0003_bg.png" id="4_aricd"]
+[ext_resource type="Texture2D" uid="uid://ds4mhyy1kdad1" path="res://assets/background/skill-desc_0002_far-buildings.png" id="5_1btvr"]
+[ext_resource type="Texture2D" uid="uid://ph78a1yxsrwy" path="res://assets/background/skill-desc_0001_buildings.png" id="6_wqhej"]
+[ext_resource type="Script" path="res://scenes/Foreground.gd" id="7_an50w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8fk5"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y1ikc"]
+a = Vector2(160, 0)
+b = Vector2(150, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_50a1q"]
+a = Vector2(1152, 0)
+b = Vector2(0, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_f85ub")
+mcScene = ExtResource("1_3ms1k")
+obstacleScene = ExtResource("3_x53jq")
+
+[node name="BGSprite" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="BGSprite"]
+texture = ExtResource("5_1btvr")
+
+[node name="BG" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Background" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("4_aricd")
+
+[node name="Middleground" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_1btvr")
+
+[node name="Foreground" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("6_wqhej")
+script = ExtResource("7_an50w")
+
+[node name="BG2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Middleground" type="TextureRect" parent="BG2"]
+layout_mode = 0
+offset_left = -1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_1btvr")
+
+[node name="Foreground" type="TextureRect" parent="BG2"]
+layout_mode = 0
+offset_left = -1152.0
+offset_bottom = 648.0
+texture = ExtResource("6_wqhej")
+script = ExtResource("7_an50w")
+
+[node name="UI" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+pivot_offset = Vector2(576, 324)
+
+[node name="GameOverBG" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.454902, 0.176471, 0.690196, 0.882353)
+
+[node name="ButtonsContainer" type="BoxContainer" parent="UI"]
+visible = false
+layout_mode = 2
+offset_left = 384.0
+offset_top = 176.0
+offset_right = 768.0
+offset_bottom = 565.0
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="UI/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+keep_pressed_outside = true
+text = "Try Again"
+
+[node name="ExitButton" type="Button" parent="UI/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Exit"
+
+[node name="Score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = 168.0
+offset_right = 9.0
+offset_bottom = 213.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_b8fk5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Floor" type="Area2D" parent="Boundaries"]
+position = Vector2(0, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
+scale = Vector2(6.4, 1)
+shape = SubResource("SegmentShape2D_y1ikc")
+
+[node name="Ceiling" type="Area2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Ceiling"]
+shape = SubResource("SegmentShape2D_50a1q")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="UI/ButtonsContainer/RestartButton" to="." method="_on_restart"]
+[connection signal="pressed" from="UI/ButtonsContainer/ExitButton" to="." method="_on_exit"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

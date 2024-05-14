@@ -1,0 +1,3 @@
+-Research WorldBoundaryShape2D instead of line
+-SPrites de palas y AFIP
+-velocidad incremental?

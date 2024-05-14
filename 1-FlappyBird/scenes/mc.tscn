@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfasfcou2gexq"]
+
+[ext_resource type="Script" path="res://scripts/mc.gd" id="1_so25x"]
+[ext_resource type="Texture2D" uid="uid://eysgi2dvsqti" path="res://assets/sprites/MC.png" id="2_m8e3k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oo4g0"]
+radius = 16.0
+
+[node name="MC" type="Area2D"]
+input_pickable = false
+script = ExtResource("1_so25x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oo4g0")
+debug_color = Color(0, 0.6, 0.701961, 0.458824)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m8e3k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
