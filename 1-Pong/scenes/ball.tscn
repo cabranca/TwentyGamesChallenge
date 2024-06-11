@@ -15,9 +15,4 @@ texture = ExtResource("1_m58qh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j2pk4")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-autostart = true
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
