@@ -1,13 +1,11 @@
-extends "res://scripts/player.gd"
+extends Player
 
-var BAR_HEIGHT : float
 var target : float
 
 func _init() -> void:
 	speed = 500
 
 func _ready() -> void:
-	BAR_HEIGHT = $Sprite2D.get_rect().size.y
 	viewport_height = get_viewport_rect().size.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

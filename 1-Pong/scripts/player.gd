@@ -1,4 +1,5 @@
 extends Area2D
+class_name Player
 
 var speed := 500.0
 
