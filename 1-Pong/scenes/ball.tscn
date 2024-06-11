@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://crjrjvadrses1"]
+[gd_scene load_steps=3 format=3 uid="uid://crjrjvadrses1"]
 
-[ext_resource type="Script" path="res://scripts/ball.gd" id="1_1vduq"]
 [ext_resource type="Texture2D" uid="uid://beq237e1ocrsr" path="res://assets/sprites/ball.png" id="1_m58qh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2pk4"]
@@ -8,7 +7,7 @@ radius = 32.0
 
 [node name="Ball" type="Area2D"]
 position = Vector2(560, 312)
-script = ExtResource("1_1vduq")
+scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_m58qh")
@@ -17,7 +16,7 @@ texture = ExtResource("1_m58qh")
 shape = SubResource("CircleShape2D_j2pk4")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 autostart = true
 

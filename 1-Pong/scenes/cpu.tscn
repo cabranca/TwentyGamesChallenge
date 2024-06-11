@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyi1k"]
 size = Vector2(64, 256)
 
-[node name="cpu" type="Area2D" groups=["Bar"]]
-position = Vector2(552, 296)
+[node name="CPU" type="Area2D" groups=["Bar", "RightBar"]]
+position = Vector2(1080, 320)
+scale = Vector2(0.25, 0.5)
 script = ExtResource("1_d7lw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

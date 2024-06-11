@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmescenwcxwwp"]
+[gd_scene load_steps=4 format=3 uid="uid://dmescenwcxwwp"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_tvmaf"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_tvmaf"]
+[ext_resource type="PackedScene" uid="uid://dt1wt54eyx2ly" path="res://scenes/main_scene.tscn" id="2_2l78j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2rn2b"]
 font_size = 75
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tvmaf")
+main_scene = ExtResource("2_2l78j")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -32,37 +34,68 @@ label_settings = SubResource("LabelSettings_2rn2b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PvE Button BG" type="ColorRect" parent="."]
+[node name="PvE" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="PvE"]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 280.0
+offset_top = 320.0
 offset_right = 672.0
-offset_bottom = 320.0
+offset_bottom = 360.0
 color = Color(0.2, 0.2, 0.2, 0.984314)
 
-[node name="PvP Button BG" type="ColorRect" parent="."]
+[node name="Button" type="Button" parent="PvE"]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 384.0
+offset_top = 320.0
 offset_right = 672.0
-offset_bottom = 424.0
+offset_bottom = 360.0
+text = "VS COMPUTER"
+
+[node name="PvP" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="PvP"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 424.0
+offset_right = 672.0
+offset_bottom = 464.0
 color = Color(0.2, 0.2, 0.2, 0.984314)
 
-[node name="PvE Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="PvP"]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 280.0
+offset_top = 424.0
 offset_right = 672.0
-offset_bottom = 320.0
-text = "VS COMPUTER"
+offset_bottom = 464.0
+text = "VS PLAYER"
 
-[node name="PvP Button2" type="Button" parent="."]
+[node name="Exit" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="Exit"]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 384.0
+offset_top = 528.0
 offset_right = 672.0
-offset_bottom = 424.0
-text = "VS COMPUTER"
+offset_bottom = 568.0
+color = Color(0.2, 0.2, 0.2, 0.984314)
+
+[node name="Button" type="Button" parent="Exit"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 528.0
+offset_right = 672.0
+offset_bottom = 568.0
+text = "EXIT"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -73,5 +106,3 @@ offset_bottom = 648.0
 text = "By Cabranca"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="button_up" from="PvE Button" to="." method="_on_pv_e_button_button_up"]

@@ -1,0 +1,2 @@
+En vez de tener escena p/cada player, tener una sola y attachear el script al instanciar en main_scene
+clamp para el movimiento horizontal de la pelota? (alguna manera de que no traspase a la barra cuando va muy rápido)

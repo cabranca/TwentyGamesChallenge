@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6drb2u4dwbqe"]
+[gd_scene load_steps=3 format=3 uid="uid://7nxkou8gn6wn"]
 
-[ext_resource type="Texture2D" uid="uid://cyipckgrc1mb" path="res://assets/sprites/paddle.png" id="2_324n7"]
+[ext_resource type="Texture2D" uid="uid://rxlu0og23dnu" path="res://assets/sprites/glasspaddle2.png" id="2_sklom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyi1k"]
 size = Vector2(80, 256)
 
-[node name="Player2" type="Area2D" groups=["Bar", "RightBar"]]
-position = Vector2(1080, 320)
+[node name="Player1" type="Area2D" groups=["Bar", "LeftBar"]]
+position = Vector2(72, 320)
 scale = Vector2(0.25, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_324n7")
+texture = ExtResource("2_sklom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hyi1k")
