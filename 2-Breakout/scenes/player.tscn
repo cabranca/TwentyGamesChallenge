@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://pwvu84dycnwv"]
+
+[ext_resource type="Texture2D" uid="uid://cjigj0815roit" path="res://assets/sprites/glasspaddle2.png" id="1_nmwv4"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_vu2oo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1vkn"]
+size = Vector2(256, 64)
+
+[node name="Player" type="Area2D" groups=["vertical_collider"]]
+position = Vector2(243, 800)
+scale = Vector2(0.25, 0.2)
+monitoring = false
+script = ExtResource("1_vu2oo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nmwv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p1vkn")

@@ -27,12 +27,6 @@ script = ExtResource("1_f85ub")
 mcScene = ExtResource("1_3ms1k")
 obstacleScene = ExtResource("3_x53jq")
 
-[node name="BGSprite" type="Node2D" parent="."]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="BGSprite"]
-texture = ExtResource("5_1btvr")
-
 [node name="BG" type="Control" parent="."]
 visible = false
 layout_mode = 3

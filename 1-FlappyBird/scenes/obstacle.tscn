@@ -7,6 +7,7 @@
 size = Vector2(50, 250)
 
 [node name="Obstacle" type="Area2D" groups=["Obstacle"]]
+position = Vector2(472, -528)
 scale = Vector2(1, 1.5)
 script = ExtResource("1_sn0r1")
 
@@ -15,8 +16,3 @@ texture = ExtResource("2_s0mf5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nqqdv")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-rect = Rect2(-25, -125, 50, 250)
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_exit"]
