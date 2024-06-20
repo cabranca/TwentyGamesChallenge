@@ -1,0 +1,345 @@
+[gd_scene load_steps=4 format=3 uid="uid://be34v0ttmr8g3"]
+
+[ext_resource type="PackedScene" uid="uid://dc0yu8g7q4cki" path="res://scenes/brick.tscn" id="1_n32ww"]
+[ext_resource type="Script" path="res://scripts/wall.gd" id="1_qg1s8"]
+[ext_resource type="Script" path="res://scripts/Line.gd" id="2_ffwrt"]
+
+[node name="Wall" type="Node2D"]
+position = Vector2(-8, 0)
+script = ExtResource("1_qg1s8")
+
+[node name="Line" type="Node2D" parent="."]
+position = Vector2(496, 64)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line2" type="Node2D" parent="."]
+position = Vector2(496, 96)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line2" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line3" type="Node2D" parent="."]
+position = Vector2(496, 128)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line3" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line4" type="Node2D" parent="."]
+position = Vector2(496, 160)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line4" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line5" type="Node2D" parent="."]
+position = Vector2(496, 192)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line5" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line6" type="Node2D" parent="."]
+position = Vector2(496, 224)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line6" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line7" type="Node2D" parent="."]
+position = Vector2(496, 256)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line7" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line8" type="Node2D" parent="."]
+position = Vector2(496, 288)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line8" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line9" type="Node2D" parent="."]
+position = Vector2(496, 320)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line9" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line10" type="Node2D" parent="."]
+position = Vector2(496, 352)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line10" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line11" type="Node2D" parent="."]
+position = Vector2(496, 384)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line11" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)
+
+[node name="Line12" type="Node2D" parent="."]
+position = Vector2(496, 416)
+script = ExtResource("2_ffwrt")
+
+[node name="Brick" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(-424, -48)
+
+[node name="Brick2" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(-296, -48)
+
+[node name="Brick3" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(-168, -48)
+
+[node name="Brick4" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(-40, -48)
+
+[node name="Brick5" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(88, -48)
+
+[node name="Brick6" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(216, -48)
+
+[node name="Brick7" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(344, -48)
+
+[node name="Brick8" parent="Line12" instance=ExtResource("1_n32ww")]
+position = Vector2(472, -48)

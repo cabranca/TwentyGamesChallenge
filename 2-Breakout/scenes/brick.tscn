@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/brick.gd" id="1_bk43l"]
 [ext_resource type="Texture2D" uid="uid://c2sllionda716" path="res://assets/sprites/paddle.png" id="1_cn2ay"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sorn"]
-size = Vector2(256, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8k6g"]
+radius = 32.0
+height = 256.0
 
 [node name="Brick" type="Area2D" groups=["vertical_collider"]]
 scale = Vector2(0.5, 0.5)
@@ -15,4 +16,5 @@ script = ExtResource("1_bk43l")
 texture = ExtResource("1_cn2ay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1sorn")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o8k6g")
