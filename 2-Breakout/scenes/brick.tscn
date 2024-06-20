@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dc0yu8g7q4cki"]
 
+[ext_resource type="Script" path="res://scripts/brick.gd" id="1_bk43l"]
 [ext_resource type="Texture2D" uid="uid://c2sllionda716" path="res://assets/sprites/paddle.png" id="1_cn2ay"]
-[ext_resource type="Script" path="res://scenes/brick.gd" id="1_p7e0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sorn"]
 size = Vector2(256, 64)
 
 [node name="Brick" type="Area2D" groups=["vertical_collider"]]
-scale = Vector2(0.25, 0.2)
-collision_mask = 0
-script = ExtResource("1_p7e0a")
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("1_bk43l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cn2ay")

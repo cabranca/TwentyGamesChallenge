@@ -1,39 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://cew0qoqwhpili"]
+[gd_scene load_steps=7 format=3 uid="uid://cew0qoqwhpili"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_cxw4x"]
 [ext_resource type="PackedScene" uid="uid://cihj1cih0f74f" path="res://scenes/ball.tscn" id="2_bap6u"]
 [ext_resource type="PackedScene" uid="uid://pwvu84dycnwv" path="res://scenes/player.tscn" id="3_n4rd8"]
+[ext_resource type="PackedScene" uid="uid://be34v0ttmr8g3" path="res://scenes/wall.tscn" id="4_vqfqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kde1q"]
-size = Vector2(128, 880.5)
+size = Vector2(128, 799.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eafr"]
-size = Vector2(600, 64)
+size = Vector2(1024, 64)
 
 [node name="Main Scene" type="Node2D"]
 script = ExtResource("1_cxw4x")
 ball_scene = ExtResource("2_bap6u")
 player_scene = ExtResource("3_n4rd8")
+wall_scene = ExtResource("4_vqfqm")
 
 [node name="Boundaries" type="Node2D" parent="."]
 
-[node name="Left Wall" type="Area2D" parent="Boundaries" groups=["horizontal_collider"]]
-position = Vector2(0, 400)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left Wall"]
-position = Vector2(-64, 40.5)
-shape = SubResource("RectangleShape2D_kde1q")
-
 [node name="Right Wall" type="Area2D" parent="Boundaries" groups=["horizontal_collider"]]
-position = Vector2(726, 400)
+position = Vector2(1264, 400)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right Wall"]
-position = Vector2(-176, 41)
+position = Vector2(-176, 0.375)
+shape = SubResource("RectangleShape2D_kde1q")
+
+[node name="Left Wall" type="Area2D" parent="Boundaries" groups=["horizontal_collider"]]
+position = Vector2(112, 400)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left Wall"]
+position = Vector2(-176, 0.375)
 shape = SubResource("RectangleShape2D_kde1q")
 
 [node name="Top Wall" type="Area2D" parent="Boundaries" groups=["vertical_collider"]]
-position = Vector2(304, 0)
+position = Vector2(536, 0)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top Wall"]
-position = Vector2(-4, -32)
+position = Vector2(-24, -32)
 shape = SubResource("RectangleShape2D_1eafr")
