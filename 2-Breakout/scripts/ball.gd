@@ -22,7 +22,7 @@ func start() -> void:
 	var initial_direction = randf_range(-1.0, 1.0)
 	direction = Vector2(initial_direction, 1.0).normalized()
 
-func on_area_entered(area) -> void:
+func on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("horizontal_collider"):
 		direction = Vector2(-direction.x, direction.y)
 	elif area.is_in_group("vertical_collider"):
